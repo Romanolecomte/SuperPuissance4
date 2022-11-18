@@ -57,6 +57,35 @@ public class CelluledeGrille {
             return false;
         }
     }
-
     
+    public Jeton recupererJeton(){
+        Jeton var=jetonCourant;
+        jetonCourant=null;
+        return var;
+    }
+    
+    public void supprimerJeton(){
+        jetonCourant=null;
+    }
+    
+    public boolean presenceDesintegrateur(){
+        if(avoirDesintegrateur==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public void placerDesintegrateur(){
+        avoirDesintegrateur=true;
+    }
+    
+    public void supprimerDesintegrateur(){
+        avoirDesintegrateur=false;
+    }
+    
+    public void activerTrouNoir(){
+        supprimerJeton();
+        supprimerTrouNoir();
+    }
 }
