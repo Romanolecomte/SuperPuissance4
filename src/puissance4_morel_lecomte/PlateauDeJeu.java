@@ -46,10 +46,16 @@ public class PlateauDeJeu {
     public void afficherGrilleSurConsole(){
         for (int i = 0; i < 6; i++) {
             for (int j = 0; i < 7; j++) { 
-                grille [i][j].avoirJeton().toString();
+                System.out.print(grille [i][j].avoirJeton().toString());
+                if (i == 6) {
+                    System.out.println("");
+                }
+                
+                
             }
         }
     }
+    
 }
     
     
