@@ -15,6 +15,7 @@ public class Puissance4_MOREL_LECOMTE {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
     }
     
 }

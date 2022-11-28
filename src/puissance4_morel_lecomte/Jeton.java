@@ -30,7 +30,7 @@ public class Jeton {
         else{
             System.out.println("J");
         }
-        return "Jeton{" + "couleur=" + couleur + '}';
+        return "Jeton{" + "couleur du jeton =" + couleur + '}';
     }
     
     
