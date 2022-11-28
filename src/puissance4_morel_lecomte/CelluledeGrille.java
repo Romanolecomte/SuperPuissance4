@@ -64,6 +64,10 @@ public class CelluledeGrille {
         return var;
     }
     
+    public Jeton avoirJeton(){
+        return jetonCourant;
+    }
+    
     public void supprimerJeton(){
         jetonCourant=null;
     }
@@ -88,4 +92,5 @@ public class CelluledeGrille {
         supprimerJeton();
         supprimerTrouNoir();
     }
+
 }
