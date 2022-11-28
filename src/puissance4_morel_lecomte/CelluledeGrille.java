@@ -4,7 +4,7 @@ package puissance4_morel_lecomte;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
+import couleur.Jeton;
 /**
  *
  * @author leamo
@@ -93,4 +93,20 @@ public class CelluledeGrille {
         supprimerTrouNoir();
     }
 
+    @Override
+    public String toString() {
+        if (jetonCourant!=null){
+            return jetonCourant.getCouleur();
+        }
+        if (avoirTrouNoir==true){
+            return "@";
+        }
+        if (avoirDesintegrateur==true){
+            return "D";
+        }
+        else{
+            return ".";
+    }
+                
+}
 }

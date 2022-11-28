@@ -15,20 +15,31 @@ public class joueur {
     private String nom;
     private String couleur;
     private ArrayList<Jeton> reserveJetons;
-    public int nombreJetonsRestants;
-    public int nombreDesintegrateurs;    
+    //public int nombreJetonsRestants;
+    private int nombreDesintegrateurs;    
     
     public joueur (String Nom){
         nom=Nom;
+        nombreDesintegrateurs=0;
     }
     
     public void affecterCouleur(String lacouleur){
         couleur=lacouleur;
     }
     
+    public void nombreDeJetons(){
+        int var;
+        var=reserveJetons.size();
+        return var;
+    }
+    
     public void ajouterJeton(Jeton jeton){
         reserveJetons.add(jeton);
     } 
+    
+    public void jouerJeton(){
+        
+    }
     
     public void obtenirDesintegrateur(){
         
