@@ -122,7 +122,56 @@ public class PlateauDeJeu {
         }
         return verif;
     }
+
+                public boolean diagonaleMontanteGagnantePourCouleur(String couleur) {
+        
+        boolean verif = false;
+        int win = 0;
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (grille[i][j].lireCouleurDuJeton().equals(couleur)) {
+                    if (grille[i+1][j+1].lireCouleurDuJeton().equals(couleur)) {
+                        if (grille[i+2][j+2].lireCouleurDuJeton().equals(couleur)) {
+                            if (grille[i+3][j+3].lireCouleurDuJeton().equals(couleur)) {
+                                win = 1;
+                            }
+                        }
+                    }
+                }
+                if (win == 1) {
+                    verif = true;
+                    
+                }                    
+            }                   
+        }
+        return verif;
+    }
     
+    public boolean diagonaleDescendanteGagnantePourCouleur(String couleur) {
+        
+        boolean verif = false;
+        int win = 0;
+        
+        for (int i = 6; i > 3; i--) {
+            for (int j = 0; j < 4; j++) {
+                if (grille[i][j].lireCouleurDuJeton().equals(couleur)) {
+                    if (grille[i-1][j].lireCouleurDuJeton().equals(couleur)) {
+                        if (grille[i-2][j].lireCouleurDuJeton().equals(couleur)) {
+                            if (grille[i-3][j].lireCouleurDuJeton().equals(couleur)) {
+                                win = 1;
+                            }
+                        }
+                    }
+                }
+                if (win == 1) {
+                    verif = true;
+                    
+                }                    
+            }                   
+        }
+        return verif;
+    }
     
 }
     
