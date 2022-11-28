@@ -43,7 +43,13 @@ public class PlateauDeJeu {
         }
         return u;
     }
-
+    public void afficherGrilleSurConsole(){
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; i < 7; j++) { 
+                grille [i][j].avoirJeton().toString();
+            }
+        }
+    }
 }
     
     
