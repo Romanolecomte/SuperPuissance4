@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class joueur {
     private String nom;
-    public String couleur;
-    public ArrayList<Jeton> reserveJetons;
+    private String couleur;
+    private ArrayList<Jeton> reserveJetons;
     public int nombreJetonsRestants;
     public int nombreDesintegrateurs;    
     
