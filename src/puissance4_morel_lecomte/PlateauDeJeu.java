@@ -156,9 +156,9 @@ public class PlateauDeJeu {
         for (int i = 6; i > 3; i--) {
             for (int j = 0; j < 4; j++) {
                 if (grille[i][j].lireCouleurDuJeton().equals(couleur)) {
-                    if (grille[i-1][j].lireCouleurDuJeton().equals(couleur)) {
-                        if (grille[i-2][j].lireCouleurDuJeton().equals(couleur)) {
-                            if (grille[i-3][j].lireCouleurDuJeton().equals(couleur)) {
+                    if (grille[i-1][j+1].lireCouleurDuJeton().equals(couleur)) {
+                        if (grille[i-2][j+2].lireCouleurDuJeton().equals(couleur)) {
+                            if (grille[i-3][j+3].lireCouleurDuJeton().equals(couleur)) {
                                 win = 1;
                             }
                         }
@@ -172,6 +172,37 @@ public class PlateauDeJeu {
         }
         return verif;
     }
+    
+    public void tasserColonne(int capt) {
+        for (int i = 0; i < 3; i++) {
+            
+        }
+        
+        
+    }
+    
+    public void placerTrouNoir(int x, int y) {    
+        grille[x][y].placerTrouNoir();
+    }
+    
+    public void supprimerTrouNoir(int x, int y) {
+        grille[x][y].supprimerTrouNoir();
+    }
+    
+        public void placerDesintegrateur(int x, int y) {
+        grille[x][y].placerDesintegrateur();
+    }
+
+    public void supprimerJeton(int x, int y) {
+        grille[x][y].supprimerJeton();
+    }
+    
+    public void recupererJeton(int x, int y) {
+        grille[x][y].recupererJeton();
+    }
+    
+    
+    
     
 }
     
