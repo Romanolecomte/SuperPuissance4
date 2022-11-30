@@ -1,6 +1,5 @@
 package puissance4_morel_lecomte;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 /*
@@ -39,8 +38,12 @@ public class Partie {
     }
     
     public void creerEtAffecterJeton(joueur Joueur){
+        String couleur_joueur=Joueur.getCouleur();
         for(int i=0;i<30;i++){
-          // Jeton =  new jeton(Joueur(couleur));
-        }
+           Jeton jeton_joueur=  new Jeton(couleur_joueur);
+           Joueur.ajouterJeton(jeton_joueur);
+        }       
     }
+    
+    //public void
 }
