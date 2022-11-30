@@ -24,26 +24,39 @@ public class Partie {
 
     public void attribuerCouleurAuxJoueurs(joueur Joueur1, joueur Joueur2) {
         Random rand = new Random();
-        int max = 2;
-        int min = 1;
-        int var = rand.nextInt(max - min + 1) + min;
-        if (var == 1) {
+        int var = rand.nextInt(2);
+        if (var == 0) {
             Joueur1.affecterCouleur("jaune");
-            Joueur2.affecterCouleur("rouge");       
-        }
-        else{
+            Joueur2.affecterCouleur("rouge");
+        } else {
             Joueur1.affecterCouleur("rouge");
-            Joueur2.affecterCouleur("jaune");  
+            Joueur2.affecterCouleur("jaune");
         }
     }
-    
-    public void creerEtAffecterJeton(joueur Joueur){
-        String couleur_joueur=Joueur.getCouleur();
-        for(int i=0;i<30;i++){
-           Jeton jeton_joueur=  new Jeton(couleur_joueur);
-           Joueur.ajouterJeton(jeton_joueur);
-        }       
+
+    public void creerEtAffecterJeton(joueur Joueur) {
+        String couleur_joueur = Joueur.getCouleur();
+        for (int i = 0; i < 30; i++) {
+            Jeton jeton_joueur = new Jeton(couleur_joueur);
+            Joueur.ajouterJeton(jeton_joueur);
+        }
     }
-    
-    //public void
+
+    public void placerTrousNoirsEtDesintegrateurs(PlateauDeJeu plateau){
+        Random rand = new Random();
+        for (int i = 0; i < 3; i++) {                        
+            int var_x = rand.nextInt(7);
+            int var_y = rand.nextInt(6);
+            if(plateau.presenceTrouNoir(var_x, var_y)==false)
+            plateau.placerTrouNoir(var_x,var_y);
+            }
+            plateau.placerDesintegrateur(var_x,var_y);
+        }
+        for(int i=0; i<2;i++){
+            
+        }
+       
+        
+
+    }
 }
