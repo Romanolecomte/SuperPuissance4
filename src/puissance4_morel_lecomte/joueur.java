@@ -15,7 +15,6 @@ public class joueur {
     private String nom;
     private String couleur;
     private ArrayList<Jeton> reserveJetons;
-    //public int nombreJetonsRestants;
     private int nombreDesintegrateurs;    
     
     public joueur (String Nom){
@@ -27,7 +26,7 @@ public class joueur {
         couleur=lacouleur;
     }
     
-    public void nombreDeJetons(){
+    public int nombreDeJetons(){
         int var;
         var=reserveJetons.size();
         return var;
@@ -38,14 +37,29 @@ public class joueur {
     } 
     
     public void jouerJeton(){
-        
+         reserveJetons.remove(0);
     }
     
     public void obtenirDesintegrateur(){
-        
+        nombreDesintegrateurs+=1;
     }
+    
+    public boolean utiliserDesintegrateur(){
+        if(nombreDesintegrateurs>0){           
+        nombreDesintegrateurs-=1;
+        return true;       
+    }
+        else{
+            return false;
+                 }
 }
 
+    public String getCouleur() {
+        return couleur;
+    }
+    
+    
+}
 
      
 
