@@ -173,9 +173,14 @@ public class PlateauDeJeu {
         return verif;
     }
     
-    public void tasserColonne(int capt) {
-        for (int i = 0; i < 3; i++) {
-            
+    public void tasserColonne(int c) {
+        for (int i = 6; i > 0; i++) { 
+                 if (grille[i][c] == null){
+                     for (int j = i; j < 5;) {
+                         grille[j][c] = grille[j+1][c];
+                     }
+                     
+            }
         }
         
         
@@ -185,20 +190,31 @@ public class PlateauDeJeu {
         grille[x][y].placerTrouNoir();
     }
     
+    public void presenceTrouNoir(int x, int y) {    
+        grille[x][y].presenceTrouNoir();
+    }
+    
     public void supprimerTrouNoir(int x, int y) {
         grille[x][y].supprimerTrouNoir();
     }
     
-        public void placerDesintegrateur(int x, int y) {
+    public void placerDesintegrateur(int x, int y) {
         grille[x][y].placerDesintegrateur();
+    }
+    
+    public void presenceDesintegrateur(int x, int y) {
+        grille[x][y].presenceDesintegrateur();
     }
 
     public void supprimerJeton(int x, int y) {
         grille[x][y].supprimerJeton();
     }
     
-    public void recupererJeton(int x, int y) {
-        grille[x][y].recupererJeton();
+    public Jeton recupererJeton(int x, int y) {
+        Jeton jeton  = grille[x][y].recupererJeton();
+        tasserColonne(y);
+        return jeton;
+        
     }
     
     
