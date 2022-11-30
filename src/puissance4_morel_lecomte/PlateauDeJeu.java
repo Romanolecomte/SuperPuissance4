@@ -18,11 +18,12 @@ public class PlateauDeJeu {
         boolean b = false;
         Jeton c = null;
         for (int i = 0; i < 6; i++) {
-            for (int j = 0; i < 7; j++) { 
+            for (int j = 0; j < 7; j++) { 
                 grille [i][j] = new CelluledeGrille(c,a,b);
             }   
         }
     }
+    
     public void AjouterJetonDansColonne(Jeton jeton, int j) {
         for( int i = 0; i <= 6; i++) {
             if (grille [i][j] == null) {
@@ -31,11 +32,12 @@ public class PlateauDeJeu {
             grille[i][j].affecterJeton(jeton);
         }
     }
+    
     public boolean grilleRemplie() {
         boolean u = true;
       
         for (int i = 0; i < 6; i++) {
-            for (int j = 0; i < 7; j++) {
+            for (int j = 0; j < 7; j++) {
                 if (grille [i][j] == null) {
                     u = false;
                 }
@@ -43,13 +45,165 @@ public class PlateauDeJeu {
         }
         return u;
     }
+    
     public void afficherGrilleSurConsole(){
         for (int i = 0; i < 6; i++) {
-            for (int j = 0; i < 7; j++) { 
-                grille [i][j].avoirJeton().toString();
+            for (int j = 0; j < 7; j++) { 
+                System.out.print(grille [i][j].avoirJeton().toString());
+                if (i == 6) {
+                    System.out.println("");
+                }
+                
+                
             }
         }
     }
+    
+    public boolean presenceJeton(int x, int y) {
+        if (grille[x][y].presenceJeton() == true){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    public String lireCouleurDuJeton(int x, int y,String couleur) {
+        couleur = grille[x][y].lireCouleurDuJeton();
+            return couleur;       
+    }
+    
+    public boolean ligneGagnantePourCouleur(String couleur) {
+        
+        boolean verif = false;
+        int win = 0;
+        
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (grille[i][j].lireCouleurDuJeton().equals(couleur)) {
+                    if (grille[i][j+1].lireCouleurDuJeton().equals(couleur)) {
+                        if (grille[i][j+2].lireCouleurDuJeton().equals(couleur)) {
+                            if (grille[i][j+3].lireCouleurDuJeton().equals(couleur)) {
+                                win = 1;
+                            }
+                        }
+                    }
+                }
+                if (win == 1) {
+                    verif = true;
+                    
+                }                    
+            }                   
+        }
+        return verif;
+    }
+ 
+        public boolean colonneGagnantePourCouleur(String couleur) {
+        
+        boolean verif = false;
+        int win = 0;
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 7; j++) {
+                if (grille[i][j].lireCouleurDuJeton().equals(couleur)) {
+                    if (grille[i+1][j].lireCouleurDuJeton().equals(couleur)) {
+                        if (grille[i+2][j].lireCouleurDuJeton().equals(couleur)) {
+                            if (grille[i+3][j].lireCouleurDuJeton().equals(couleur)) {
+                                win = 1;
+                            }
+                        }
+                    }
+                }
+                if (win == 1) {
+                    verif = true;
+                    
+                }                    
+            }                   
+        }
+        return verif;
+    }
+
+                public boolean diagonaleMontanteGagnantePourCouleur(String couleur) {
+        
+        boolean verif = false;
+        int win = 0;
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (grille[i][j].lireCouleurDuJeton().equals(couleur)) {
+                    if (grille[i+1][j+1].lireCouleurDuJeton().equals(couleur)) {
+                        if (grille[i+2][j+2].lireCouleurDuJeton().equals(couleur)) {
+                            if (grille[i+3][j+3].lireCouleurDuJeton().equals(couleur)) {
+                                win = 1;
+                            }
+                        }
+                    }
+                }
+                if (win == 1) {
+                    verif = true;
+                    
+                }                    
+            }                   
+        }
+        return verif;
+    }
+    
+    public boolean diagonaleDescendanteGagnantePourCouleur(String couleur) {
+        
+        boolean verif = false;
+        int win = 0;
+        
+        for (int i = 6; i > 3; i--) {
+            for (int j = 0; j < 4; j++) {
+                if (grille[i][j].lireCouleurDuJeton().equals(couleur)) {
+                    if (grille[i-1][j+1].lireCouleurDuJeton().equals(couleur)) {
+                        if (grille[i-2][j+2].lireCouleurDuJeton().equals(couleur)) {
+                            if (grille[i-3][j+3].lireCouleurDuJeton().equals(couleur)) {
+                                win = 1;
+                            }
+                        }
+                    }
+                }
+                if (win == 1) {
+                    verif = true;
+                    
+                }                    
+            }                   
+        }
+        return verif;
+    }
+    
+    public void tasserColonne(int capt) {
+        for (int i = 0; i < 3; i++) {
+            
+        }
+        
+        
+    }
+    
+    public void placerTrouNoir(int x, int y) {    
+        grille[x][y].placerTrouNoir();
+    }
+    
+    public void supprimerTrouNoir(int x, int y) {
+        grille[x][y].supprimerTrouNoir();
+    }
+    
+        public void placerDesintegrateur(int x, int y) {
+        grille[x][y].placerDesintegrateur();
+    }
+
+    public void supprimerJeton(int x, int y) {
+        grille[x][y].supprimerJeton();
+    }
+    
+    public void recupererJeton(int x, int y) {
+        grille[x][y].recupererJeton();
+    }
+    
+    
+    
+    
 }
     
     

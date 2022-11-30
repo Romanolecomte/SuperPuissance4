@@ -25,12 +25,12 @@ public class Jeton {
     public String toString() {
         
         if (couleur == "rouge"){
-            System.out.println("R");
+            return("R");
         }
         else{
-            System.out.println("J");
+            return("J");
         }
-        return "Jeton{" + "couleur du jeton =" + couleur + '}';
+
     }
     
     
