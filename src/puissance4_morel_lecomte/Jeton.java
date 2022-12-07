@@ -30,14 +30,6 @@ public class Jeton {
         else{
             return("J");
         }
-
-    }
-    
-    
-    
-    
-    
-    
-    
+    }   
 }
 

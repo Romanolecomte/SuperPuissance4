@@ -172,15 +172,14 @@ public class PlateauDeJeu {
     }
 
     public void tasserColonne(int c) {
-        for (int i = 6; i > 0; i++) {
-            if (grille[i][c] == null) {
-                for (int j = i; j < 5;) {
-                    grille[j][c] = grille[j + 1][c];
-                }
-
+        for (int i = 0; i < 5; i++) { 
+                 if (grille[i][c] == null){
+                     for (int j = i; j < 5; j++) {
+                         grille[j][c] = grille[j+1][c];
+                     }
+                grille[5][c] = null;   
             }
-        }
-
+        }    
     }
 
     public void placerTrouNoir(int x, int y) {
