@@ -20,7 +20,6 @@ public class Partie {
     public Partie(joueur Joueur1, joueur Joueur2) {
         listeJoueurs[0] = Joueur1;
         listeJoueurs[1] = Joueur2;
-        // new plateau();
     }
 
     public void attribuerCouleurAuxJoueurs() {
@@ -100,7 +99,8 @@ public class Partie {
                         Jeton jeton = new Jeton(joueurCourant.getCouleur());
                         plateau.AjouterJetonDansColonne(jeton, colonne_jeton);
                         if (plateau.presenceDesintegrateur(plateau.AjouterJetonDansColonne(jeton, colonne_jeton), colonne_jeton)) {
-                            
+                            plateau.supprimerDesintegrateur(plateau.AjouterJetonDansColonne(jeton, colonne_jeton), colonne_jeton);
+                            joueurCourant.obtenirDesintegrateur();
                         }
                         if (plateau.presenceTrouNoir(plateau.AjouterJetonDansColonne(jeton, colonne_jeton), colonne_jeton)) {
                             plateau.supprimerJeton(plateau.AjouterJetonDansColonne(jeton, colonne_jeton), colonne_jeton);
