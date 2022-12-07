@@ -88,7 +88,7 @@ public class Partie {
     public void lancerPartie() {
         joueurCourant = listeJoueurs[0];
         Scanner sc = new Scanner(System.in);
-        while (plateau.ligneGagnantePourCouleur(joueurCourant.getCouleur()) || plateau.grilleRemplie() == false || plateau.colonneGagnantePourCouleur(joueurCourant.getCouleur()) || plateau.diagonaleDescendanteGagnantePourCouleur(joueurCourant.getCouleur()) || plateau.diagonaleMontanteGagnantePourCouleur(joueurCourant.getCouleur())) {
+        while (plateau.ligneGagnantePourCouleur(joueurCourant.getCouleur())==false || plateau.grilleRemplie() == false || plateau.colonneGagnantePourCouleur(joueurCourant.getCouleur()) || plateau.diagonaleDescendanteGagnantePourCouleur(joueurCourant.getCouleur()) || plateau.diagonaleMontanteGagnantePourCouleur(joueurCourant.getCouleur())) {
             int coup;
             do {
                 System.out.println("Quel est votre coup ? Tapez 1 si vous voulez placer un jeton, 2 pour un desintégrateur, 3 pour récupérer un jeton");
@@ -108,8 +108,8 @@ public class Partie {
                             plateau.supprimerJeton(plateau.AjouterJetonDansColonne(jeton, colonne_jeton), colonne_jeton);
                             plateau.supprimerTrouNoir(plateau.AjouterJetonDansColonne(jeton, colonne_jeton), colonne_jeton);
                         }
-                    } while (colonne_jeton > 7 || colonne_jeton < 1);
-                    System.out.println("coup non valide");
+                    } while (colonne_jeton > 7 || colonne_jeton < 0);
+
                 }
 
                 if (coup == 2) {
@@ -121,7 +121,7 @@ public class Partie {
                         plateau.supprimerJeton(ligne_des, colonne_des);
                         plateau.tasserColonne(colonne_des);
                     } while (colonne_des > 7 || colonne_des < 1 || plateau.presenceJeton(ligne_des, colonne_des)==false);
-                    System.out.println("coup non valide");
+
                 }
 
                 if (coup == 3) {
@@ -133,15 +133,16 @@ public class Partie {
                         plateau.recupererJeton(ligne_recup, colonne_recup);
                         plateau.tasserColonne(colonne_recup);
                     } while (colonne_recup > 7 || colonne_recup < 1 || plateau.presenceJeton(ligne_recup, colonne_recup)==false);
-                    System.out.println("coup non valide");
+
                 }
             } while (coup != 1 && coup != 2 && coup != 3);
-            System.out.println("coup non valide");
-        }
+            //System.out.println("coup non valide");
+        
         plateau.afficherGrilleSurConsole();
         if (joueurCourant==listeJoueurs[0]){
             joueurCourant=listeJoueurs[1];
         }else 
             joueurCourant=listeJoueurs[0];
+        }
     }
 }
