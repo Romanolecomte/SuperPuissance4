@@ -15,7 +15,6 @@ public class Puissance4_MOREL_LECOMTE {
      */
     public static void main(String[] args) {
         
-
         joueur joueur1 = new joueur ("Romain");
         joueur joueur2 = new joueur ("Léa");
         
@@ -23,7 +22,8 @@ public class Puissance4_MOREL_LECOMTE {
         
         partie1.initialiserPartie();
         
-
+        partie1.lancerPartie();
+        
        
     }
     
