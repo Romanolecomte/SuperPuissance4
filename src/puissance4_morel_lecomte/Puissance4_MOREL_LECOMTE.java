@@ -17,7 +17,7 @@ public class Puissance4_MOREL_LECOMTE {
         
         System.out.println(" Bienvenue dans le jeu Puissance 4!");
         Partie.une_partie = new Partie();
-        une_partie.InitaliserPartie();
+        une_partie.initaliserPartie();
         
        
     }
