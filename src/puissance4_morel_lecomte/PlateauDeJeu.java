@@ -49,8 +49,8 @@ public class PlateauDeJeu {
     public void afficherGrilleSurConsole() {
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 7; j++) {
-                System.out.print(grille[i][j].avoirJeton().toString());
-                if (i == 6) {
+                System.out.print(grille[i][j].toString());
+                if (j == 6) {
                     System.out.println("");
                 }
 
@@ -151,7 +151,7 @@ public class PlateauDeJeu {
         boolean verif = false;
         int win = 0;
 
-        for (int i = 6; i > 3; i--) {
+        for (int i = 5; i > 3; i--) {
             for (int j = 0; j < 4; j++) {
                 if (grille[i][j].lireCouleurDuJeton().equals(couleur)) {
                     if (grille[i - 1][j + 1].lireCouleurDuJeton().equals(couleur)) {
