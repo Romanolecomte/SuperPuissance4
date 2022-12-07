@@ -14,7 +14,11 @@ public class Puissance4_MOREL_LECOMTE {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        System.out.println(" Bienvenue dans le jeu Puissance 4!");
+        Partie.une_partie = new Partie();
+        une_partie.InitaliserPartie();
+        
        
     }
     
