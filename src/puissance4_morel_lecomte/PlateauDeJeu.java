@@ -38,7 +38,7 @@ public class PlateauDeJeu {
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 7; j++) {
-                if (grille[i][j] == null) {
+                if (grille[i][j].presenceJeton()==false) {
                     u = false;
                 }
             }
