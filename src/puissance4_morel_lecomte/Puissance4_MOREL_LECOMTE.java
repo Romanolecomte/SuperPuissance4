@@ -15,10 +15,15 @@ public class Puissance4_MOREL_LECOMTE {
      */
     public static void main(String[] args) {
         
-        System.out.println(" Bienvenue dans le jeu Puissance 4!");
-        Partie.une_partie = new Partie();
-        une_partie.initaliserPartie();
+
+        joueur joueur1 = new joueur ("Romain");
+        joueur joueur2 = new joueur ("Léa");
         
+        Partie partie1 = new Partie (joueur1,joueur2);
+        
+        partie1.initialiserPartie();
+        
+
        
     }
     
